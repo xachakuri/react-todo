@@ -1,0 +1,16 @@
+.input {
+  border: none;
+  outline: none;
+  font-size: 30px;
+  color: #333;
+}
+.inputTheme {
+  &_default {
+    width: 500px;
+    padding: 16px 130px 16px 20px;
+  }
+  &_default::placeholder {
+    color: #c0c0c0;
+    opacity: 0.6;
+  }
+}

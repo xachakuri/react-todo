@@ -1,0 +1,49 @@
+.button {
+  width: 100%;
+  display: inline-block;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  padding: 4px;
+  color: #4caf50;
+  border: 1px solid #4caf50;
+  background: none;
+  &_active {
+    color: #ffffff;
+    background-color: #4caf50;
+  }
+}
+
+.buttonTheme {
+  &_add {
+    color: #ffffff;
+    border-radius: 0;
+    background: #4caf50;
+    border: 0;
+  }
+  &_add:hover {
+    text-decoration: underline;
+  }
+  &_default {
+    border: 0;
+  }
+  &_error {
+    color: #b22222;
+    border-color: #b22222;
+    border: 0;
+  }
+  &_error:hover {
+    text-decoration: underline;
+  }
+  &_delete {
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: #b22222;
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+}
