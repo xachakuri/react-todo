@@ -1,22 +1,28 @@
 import React, { useCallback, useState } from 'react';
 import { Button, Input } from '../../../ui-kit';
-import { useAddTodoMutation } from '../../../redux';
+import { useDispatch } from 'react-redux';
+import { addTodo } from '../../../redux/slice';
 
 import styles from './TodoForm.module.scss';
 
 export const TodoForm = () => {
-  const [addTodo] = useAddTodoMutation();
   const [newTodo, setNewTodo] = useState('');
 
+  const dispatch = useDispatch();
+
   const handleAddTodo = useCallback(
-    async (e) => {
+    (e) => {
       e.preventDefault();
       if (newTodo) {
-        await addTodo({ title: newTodo, completed: false }).unwrap();
-        setNewTodo('');
+        dispatch(
+          addTodo({
+            title: newTodo,
+          }),
+        );
       }
+      setNewTodo('');
     },
-    [addTodo, newTodo],
+    [dispatch, newTodo],
   );
   const onChangeInput = useCallback((e) => setNewTodo(e.target.value), [setNewTodo]);
 
