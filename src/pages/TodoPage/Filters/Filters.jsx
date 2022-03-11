@@ -10,9 +10,11 @@ const filterBtn = ['All', 'Active', 'Completed'];
 
 export const Filters = () => {
   const dispatch = useDispatch();
+
   const selectedFilter = useSelector(activeFilter);
-  const handleDeleteCompletedTodo = useCallback(() => dispatch(deleteCompletedTodo()), [dispatch]);
   const isStatusToggleTasks = useSelector(statusToggleTasks);
+
+  const handleDeleteCompletedTodo = useCallback(() => dispatch(deleteCompletedTodo()), [dispatch]);
 
   const onClickFilter = useCallback(
     (filter) => {

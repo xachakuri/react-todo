@@ -39,7 +39,7 @@ export const TodoItem = ({ id, title, completed }) => {
 };
 
 TodoItem.propTypes = {
-    title: PropTypes.string,
-    id: PropTypes.number,
-    completed: PropTypes.bool,
+  title: PropTypes.string,
+  id: PropTypes.string,
+  completed: PropTypes.bool,
 };
